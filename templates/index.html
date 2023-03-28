@@ -72,8 +72,8 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
-      <h1>Omurbek Dulatov</h1>
-      <p>I'm <span class="typed" data-typed-items="Python Developer"></span></p>
+      <h1>{{ user_info.first_name }} {{ user_info.last_name }}</h1>
+      <p>I'm <span class="typed" data-typed-items="{{ user_info.position.name }}"></span></p>
     </div>
   </section><!-- End Hero -->
 
@@ -96,22 +96,21 @@
             <img src="../static/img/photo_2021-12-29_21-30-19.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3>Python Backend Developer</h3>
+            <h3>{{ user_info.position.name }}</h3>
             <p class="fst-italic">
-              В сфере коммерческой разработки уже более 4 лет, на данный момент являюсь 
-              Python Backend разрабочиком.
+              {{ user_info.position.description }}
             </p>
             <div class="row">
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>День рождение:</strong> <span>1996 год, 14 июль</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Телефон:</strong> <span>+9967773422343</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Город:</strong> <span>Бишкек</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>День рождение:</strong> <span>{{ user_info.date_of_birth.strftime('%Y') }} год, {{ user_info.date_of_birth.strftime('%d') }} {{ user_info.date_of_birth.strftime('%B') }}</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Телефон:</strong> <span> {{ user_info.phone_number }} </span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Город:</strong> <span>{{ user_info.address }}</span></li>
                 </ul>
               </div>
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Возраст:</strong> <span>26</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Возраст:</strong> <span>{{ user_info.age }}</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Образование:</strong> <span>Бакалавр</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>PhEmailone:</strong> <span>email@example.com</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Фриланс:</strong> <span>Доступен</span></li>
